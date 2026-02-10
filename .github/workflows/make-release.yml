@@ -2,29 +2,52 @@ name: make-release
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       # Checkout
-      - uses: actions/checkout@v2
-      
-      # Create dist directory
-      - name: Create /dist
-        run: mkdir dist
+      - uses: actions/checkout@v4
 
-      # Build CSS
-      - name: Sass Build
-        uses: gha-utilities/sass-build@v0.4.8
-        with:
-          source: src/fluent-build.scss
-          destination: dist/Fluent-Discord.css
-          outputStyle: expanded
-          
-      # Delete @charset
-      - name: Delete charset
-        run: sed -i '1d' dist/Fluent-Discord.css
+      # Build CSS outputs
+      - name: Build theme CSS files
+        run: |
+          mkdir -p dist release-assets
+          npm install --global sass
+
+          while IFS='|' read -r source destination; do
+            sass --style=expanded "$source" "$destination"
+            sed -i '1d' "$destination"
+          done <<'BUILDS'
+          src/fluent-build.scss|dist/Fluent-Discord.css
+          src/variants/fluent-guts-auto.scss|dist/Fluent-In-Guts.theme.css
+          src/variants/fluent-guts-static.scss|dist/Fluent-In-Guts-static.theme.css
+          src/variants/fluent-memories-auto.scss|dist/Fluent-In-Memories.theme.css
+          src/variants/fluent-memories-static.scss|dist/Fluent-In-Memories-static.theme.css
+          BUILDS
+
+          cp dist/Fluent-In-Guts.theme.css release-assets/
+          cp dist/Fluent-In-Guts-static.theme.css release-assets/
+          cp dist/Fluent-In-Memories.theme.css release-assets/
+          cp dist/Fluent-In-Memories-static.theme.css release-assets/
+
+          find dist -mindepth 1 -maxdepth 1 -type f ! -name 'Fluent-Discord.css' -delete
+
+      - name: Read version from metadata
+        id: metadata_version
+        run: |
+          version="$(sed -nE 's/^\$version: "([^"]+)";$/\1/p' src/modules/core/_metadata.scss)"
+
+          if [ -z "$version" ]; then
+            echo "Could not parse version from src/modules/core/_metadata.scss" >&2
+            exit 1
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       # Deploy to gh-pages
       - name: GitHub Pages action
@@ -33,5 +56,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          keep_files: true
+          keep_files: false
           commit_message: Deployment from Action
+
+      - name: Upload theme CSS files to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.metadata_version.outputs.version }}
+          name: ${{ steps.metadata_version.outputs.version }}
+          files: |
+            release-assets/Fluent-In-Guts.theme.css
+            release-assets/Fluent-In-Guts-static.theme.css
+            release-assets/Fluent-In-Memories.theme.css
+            release-assets/Fluent-In-Memories-static.theme.css
+          fail_on_unmatched_files: true
+          generate_release_notes: true

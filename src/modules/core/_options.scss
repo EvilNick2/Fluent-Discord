@@ -34,6 +34,7 @@
     --fluent-acrylic-background-blur: #{$fluent-acrylic-background-blur};
     --fluent-acrylic-background-dimness: #{$fluent-acrylic-background-dimness};
     --fluent-acrylic-background-saturate: #{$fluent-acrylic-background-saturate};
+    /* Set to 'none' to hide, 'flex' to show */
     --fluent-show-nitro-decorations: #{$fluent-show-nitro-decorations};
     --fluent-show-activity-status: #{$fluent-show-activity-status};
 }

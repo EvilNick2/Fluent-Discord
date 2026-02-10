@@ -81,3 +81,18 @@
         display: var(--fluent-show-nitro-decorations);
     }
 }
+
+// Activity Status Toggle
+[class*='membersGroup'] {
+    &:has([role='button']) {
+        display: var(--fluent-show-activity-status);
+    }
+}
+
+[class*='member'] {
+    [class*='container'] {
+        &:has([class*='badges']) {
+        display: var(--fluent-show-activity-status);
+        }
+    }
+}

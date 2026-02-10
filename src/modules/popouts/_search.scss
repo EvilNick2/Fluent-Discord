@@ -4,13 +4,13 @@
     border: 1px solid $SurfaceStrokeColorDefault;
     border-radius: 8px;
 
-    .header__56fec{
+    .header__16eb0{
         @include TypeBodyStrong;
         color: $TextFillColorPrimary;
         text-transform: none;
     }
 
-    .option__56fec{
+    .option__16eb0{
         margin: 1px 10px;
         height: 32px;
         border: 1px solid transparent;
@@ -23,29 +23,29 @@
             display: none;
         }
 
-        .filter__56fec,
-        .answer__56fec,
-        .displayedNick__56fec,
-        .displayUsername__56fec,
-        .nonText__56fec,
+        .filter__16eb0,
+        .answer__16eb0,
+        .displayedNick__16eb0,
+        .displayUsername__16eb0,
+        .nonText__16eb0,
         strong{
             @include TypeBody;
         }
 
-        .filter__56fec,
-        .displayedNick__56fec,
+        .filter__16eb0,
+        .displayedNick__16eb0,
         strong{
             color: $TextFillColorPrimary;
             @include TypeBody;
         }
-        .answer__56fec,
-        .displayUsername__56fec{
+        .answer__16eb0,
+        .displayUsername__16eb0{
             color: $TextFillColorSecondary;
             @include TypeBody;
         }
     }
-    .resultsGroup__56fec .resultsGroup__56fec,
-    .resultsGroup__56fec .searchLearnMore__56fec{
+    .resultsGroup__16eb0 .resultsGroup__16eb0,
+    .resultsGroup__16eb0 .searchLearnMore__16eb0{
         top: 16px;
     }
 

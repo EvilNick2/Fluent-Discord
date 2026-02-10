@@ -50,7 +50,7 @@
 
 // Select
 .theme-dark{
-    .select__3f413{
+    .select_a16aea{
         padding: 3px 8px 3px 12px;
         background-color: $ControlFillColorDefault;
         border: 1px solid $ControlStrokeColorDefault;
@@ -61,10 +61,10 @@
     }
 
     // Options popout
-    .popout__3f413{
+    .popout_a16aea{
         background: $SolidbackgroundFillColorQuarternary;
         border: 1px solid $SurfaceStrokeColorFlyout;
-        .option__3f413{
+        .option_a16aea{
             min-height: 32px;
             margin: 4px;
             padding: 8px;
@@ -93,7 +93,7 @@
                     background-color: $SubtleFillColorSecondary;
                     border-radius: 4px;
                 }
-                .selectedIcon__3f413{
+                .selectedIcon_a16aea{
                     display: none;
                 }
             }

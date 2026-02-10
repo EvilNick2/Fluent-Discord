@@ -90,7 +90,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          keep_files: false
+          keep_files: true
           commit_message: Deployment from Action
 
       - name: Upload theme CSS files to release

@@ -10,7 +10,12 @@
     "scripts": {
         "build-static": "sass src/fluent.scss:dist/Fluent-Discord-static.theme.css --no-charset --no-source-map",
         "build-auto": "sass src/fluent-auto.scss:dist/Fluent-Discord.theme.css --no-charset --no-source-map",
-        "dev": "sass src/fluent.scss:%APPDATA%/Vencord/themes/Fluent-Discord.theme.css --no-charset --no-source-map --watch"
+        "build-guts": "sass src/variants/fluent-guts-static.scss:dist/Fluent-In-Guts-static.theme.css --no-charset --no-source-map",
+        "build-memories": "sass src/variants/fluent-memories-static.scss:dist/Fluent-In-Memories-static.theme.css --no-charset --no-source-map",
+        "build-guts-auto": "sass src/variants/fluent-guts-auto.scss:dist/Fluent-In-Guts.theme.css --no-charset --no-source-map",
+        "build-memories-auto": "sass src/variants/fluent-memories-auto.scss:dist/Fluent-In-Memories.theme.css --no-charset --no-source-map",
+        "build-variants": "npm run build-guts && npm run build-memories && npm run build-guts-auto && npm run build-memories-auto",
+        "dev": "sass src/variants/fluent-memories-static.scss:%APPDATA%/Vencord/themes/Fluent-in-Memories-Dev.theme.css --no-charset --no-source-map --watch"
     },
     "devDependencies": {
         "sass": "^1.49.7"

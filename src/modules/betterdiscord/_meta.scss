@@ -1,17 +1,24 @@
+// Default metadata variables
+$theme-name: "Fluent Discord" !default;
+$theme-author: "EvilNick2" !default;
+$theme-version: #{$version} !default;
+$theme-description: "Fluent theme for Discord" !default;
+$theme-source: "https://github.com/EvilNick2/Fluent-Discord" !default;
+
 @if $isAutoFile {
 /**
- * @name Fluent Discord
- * @author TakosThings
- * @version #{$version}
- * @description Fluent theme for Discord (🔄 Auto-updating)
- * @source https://github.com/TakosThings/Fluent-Discord
+ * @name #{$theme-name}
+ * @author #{$theme-author}
+ * @version #{$theme-version}
+ * @description #{$theme-description} (🔄 Auto-updating)
+ * @source #{$theme-source}
 */
 } @else{
 /**
- * @name Fluent Discord
- * @author TakosThings
- * @version #{$version}
- * @description Fluent theme for Discord (⏹ Static)
- * @source https://github.com/TakosThings/Fluent-Discord
+ * @name #{$theme-name}
+ * @author #{$theme-author}
+ * @version #{$theme-version}
+ * @description #{$theme-description} (⏹ Static)
+ * @source #{$theme-source}
 */
 }

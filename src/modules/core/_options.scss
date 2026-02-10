@@ -15,16 +15,27 @@
   * You can change the accent colour by using the Colour Selector tool: https://evilnick2.github.io/Fluent-Discord/color.html
 **/
 
-:root{
+:root {
     /* DefaultBlue */
-    --fluent-accent-hue-sat: 207, 100%;
-    --fluent-accent-lightness: 42%;
-    --fluent-text-on-accent-color: 0, 0, 0;
-    --fluent-acrylic-background: url(https://takosthings.github.io/Fluent-Discord/img/Captured_Motion_27.jpg);
-    --fluent-acrylic-background-blur: 24px;
-    --fluent-acrylic-background-dimness: 75%;
-    --fluent-acrylic-background-saturate: 140%;
-    --fluent-show-nitro-decorations: none;
+    $fluent-accent-hue-sat: 207, 100% !default;
+    $fluent-accent-lightness: 42% !default;
+    $fluent-text-on-accent-color: 0, 0, 0 !default;
+    $fluent-acrylic-background: url(https://evilnick2.github.io/Fluent-Discord/img/Captured_Motion_27.jpg) !default;
+    $fluent-acrylic-background-blur: 24px !default;
+    $fluent-acrylic-background-dimness: 75% !default;
+    $fluent-acrylic-background-saturate: 140% !default;
+    $fluent-show-nitro-decorations: none !default;
+    $fluent-show-activity-status: flex !default;
+
+    --fluent-accent-hue-sat: #{$fluent-accent-hue-sat};
+    --fluent-accent-lightness: #{$fluent-accent-lightness};
+    --fluent-text-on-accent-color: #{$fluent-text-on-accent-color};
+    --fluent-acrylic-background: #{$fluent-acrylic-background};
+    --fluent-acrylic-background-blur: #{$fluent-acrylic-background-blur};
+    --fluent-acrylic-background-dimness: #{$fluent-acrylic-background-dimness};
+    --fluent-acrylic-background-saturate: #{$fluent-acrylic-background-saturate};
+    --fluent-show-nitro-decorations: #{$fluent-show-nitro-decorations};
+    --fluent-show-activity-status: #{$fluent-show-activity-status};
 }
 
 /**

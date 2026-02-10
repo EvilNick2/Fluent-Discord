@@ -58,7 +58,7 @@ The following is out of scope of this project
 If you are interested in creating a PR for a plugin use the following formatting:
 
 #### BetterDiscord
-* Create a new file in `src/modules/betterdiscord/plugins` with the following formatting: `_GitHubUsername.PluginName.scss`. Note the underscore at the start of the filename. Capitalisation should also match the username and plugin name. Example: `_TakosThings.FluentDiscord.scss`
+* Create a new file in `src/modules/betterdiscord/plugins` with the following formatting: `_GitHubUsername.PluginName.scss`. Note the underscore at the start of the filename. Capitalisation should also match the username and plugin name. Example: `EvilNick2.FluentDiscord.scss`
 * Add an import to `src/modules/betterdiscord/_plugin_compat.scss` with the following formatting:
 ```SCSS
 // https://betterdiscord.app/plugin/PluginName

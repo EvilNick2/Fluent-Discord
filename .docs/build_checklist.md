@@ -16,7 +16,7 @@
 - [ ] Correct version in title
 - [ ] Example release body:
 ```
-**Full Changelog**: https://github.com/TakosThings/Fluent-Discord/compare/v1.10.8...v1.10.9
+**Full Changelog**: https://github.com/EvilNick2/Fluent-Discord/compare/v1.10.8...v1.10.9
 
 ## Highlights
 * 

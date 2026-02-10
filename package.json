@@ -3,10 +3,10 @@
     "name": "fluent-discord",
     "license": "MIT",
     "author": {
-        "name": "TakosThings",
-        "url": "https://github.com/TakosThings/Fluent-Discord"
+        "name": "EvilNick2",
+        "url": "https://github.com/EvilNick2/Fluent-Discord"
     },
-    "repository": "git:TakosThings/Fluent-Discord",
+    "repository": "git:EvilNick2/Fluent-Discord",
     "scripts": {
         "build-static": "sass src/fluent.scss:dist/Fluent-Discord-static.theme.css --no-charset --no-source-map",
         "build-auto": "sass src/fluent-auto.scss:dist/Fluent-Discord.theme.css --no-charset --no-source-map",

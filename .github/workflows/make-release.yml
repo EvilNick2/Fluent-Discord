@@ -23,7 +23,7 @@ jobs:
       - name: Check if metadata version is new
         id: version_check
         run: |
-          version="$(sed -nE 's/^\$version: "([^"]+)";$/\1/p' src/modules/core/_metadata.scss)"
+          version="$(sed -nE 's/^\$version:[[:space:]]*"([^"]+)";[[:space:]]*$/\1/p' src/modules/core/_metadata.scss | tr -d '\r' | head -n 1"
 
           if [ -z "$version" ]; then
             echo "Could not parse version from src/modules/core/_metadata.scss" >&2
